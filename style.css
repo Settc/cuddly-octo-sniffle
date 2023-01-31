@@ -1,0 +1,144 @@
+body {
+    background-color: rgb(20,20,20);
+    margin: 0px;
+}
+
+p {
+    display: inline;
+}
+
+#footer {
+    margin: 0px;
+    background-color: rgba(96, 156, 180, .2);
+    height: 2%;
+    width: 100vw;
+    position: absolute;
+    text-align: center;
+    color: #e1e1e1;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#menu {
+   
+    height: 98vh;
+    width: 20vw;
+    display: flex;
+    align-items: end;
+    
+    
+    
+}
+
+.menu-item {
+    color: #f3f3f1;
+    font-size: clamp(2rem, 2vw, 2rem);
+    font-family: 'Aboreto', cursive;
+
+    display: block;
+    text-decoration: none;
+    padding: clamp(.25rem, .5vw, 1rem) 0rem;
+    transition: opacity 400ms ease;
+}
+
+#menu-items {
+    margin-left: clamp(1rem, 3vw, 9em);
+    margin-bottom: clamp(1rem, 3vw, 9em);
+    position: relative;
+    z-index: 2;
+}
+
+#menu-items:hover > .menu-item {
+    opacity: .3;
+    
+}
+
+#menu-items:hover > .menu-item:hover {
+    opacity: 1;
+    font-weight: 900;
+}
+
+
+#menu-background-pattern {
+    height: 100vh;
+    width: 100vw;
+    
+    background-image: radial-gradient(
+        rgba(96, 156, 180, 0.154) 2%,
+        transparent 7%
+        );
+        background-position: 0% 0%;
+        background-size: 10vmin 10vmin;
+        
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        
+        transition: opacity 100ms ease,
+        background-size 800ms ease,
+        background-position 800ms ease;
+}
+
+#menu-background-image {
+    height: 100%;
+    width: 100%;
+
+    background-image: url("blue_tiger.png");
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+
+    background-position: center 40%;
+    background-size: 110vmax;
+    opacity: .25;
+
+    transition: opacity 800ms ease,
+        background-size 800ms ease-out,
+        background-position 800ms ease;
+}
+    
+#menu-items:hover ~ #menu-background-pattern {
+    background-size: 11vmin 11vmin;
+    opacity: .5;
+}
+    
+#menu-items:hover ~ #menu-background-image {
+    background-size: 100vmax;
+    opacity: .15;
+}
+
+#menu[data-active-index="0"] > #menu-background-pattern {
+    background-position: 0% -25%;
+}
+
+#menu[data-active-index="1"] > #menu-background-pattern {
+    background-position: 0% -50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-pattern {
+    background-position: 0% -75%;
+}
+
+#menu[data-active-index="3"] > #menu-background-pattern {
+    background-position: 0% -100%;
+}
+
+#menu[data-active-index="0"] > #menu-background-image {
+    background-position: center 45%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image {
+    background-position: center 50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image {
+    background-position: center 55%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image {
+    background-position: center 60%;
+}
